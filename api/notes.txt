@@ -37,3 +37,9 @@ Remove a docker container
 
 Remove all images and conztainers
     docker system prune -a
+
+Build an image and run it in container
+    docker-compose up
+
+Stop the container and remove it / romove the images / remove the containers
+    docker-compose down --rmi -v
