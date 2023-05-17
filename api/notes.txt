@@ -1,0 +1,39 @@
+Build an docker image ...
+
+    docker build -t JockExpressApp .
+    docker build -t JockExpressApp:v1 .
+
+List docker images
+
+    docker images
+
+Run a docker image inside a container
+
+    docker run --name name_of_the_container nanme_of_the_image/id_of_image
+    docker run --name name_of_the_container -p publish_port:publish_port -d name_of_the_image/id_of_the_image
+    docker run --name name_of_the_container -p publish_port:publish_port -d name_of_the_image:tag/id_of_the_image:tag
+    docker run --name name_of_the_container -p publish_port:publish_port -d --rm name_of_the_image:tag/id_of_the_image:tag
+    docker run --name name_of_the_container -p publish_port:publish_port -d --rm -v absolute_path_of_the_project_folder:/relative_path_of_project_in_image -v relative_path_vs_node_modules_to_exclude_it name_of_the_image:tag/id_of_the_image:tag
+    docker start container_name
+
+List in use container or actoive connection
+
+    docker ps
+    docker ps -a
+
+Stop a container in running
+
+    docker stop container_name/container_id
+
+For doing layer caching we can copy the package.json file before the npnm install process for this last to be
+ cached and  then loaded more quiqly at the next docker run
+
+ Remove a docker image 
+    docker image rm image_name
+    docker image rm image_name -f
+
+Remove a docker container
+    docker container rm container_name
+
+Remove all images and conztainers
+    docker system prune -a
